@@ -11,7 +11,7 @@ function rawg_endpoint($path, $params = []) {
     return RAWG_BASE_URL . $path . '?' . http_build_query($params);
 }
 
-//  Memanggil API RAWG
+//  Memanggil API dari RAWG
 function call_rawg($path, $params = []) {
     $url = rawg_endpoint($path, $params);
 
