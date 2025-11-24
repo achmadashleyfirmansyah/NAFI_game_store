@@ -196,7 +196,7 @@ $games = $data['results'] ?? [];
                     <a class="nav-link active" aria-current="page" href="<?php echo $_SERVER['PHP_SELF']; ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Trending</a>
+                    <a class="nav-link" href="trending.php">Trending</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
