@@ -22,6 +22,17 @@ $games = $data['results'] ?? [];
             color: white;
             padding: 20px;
         }
+                .navbar {
+            background: #1c232f;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 20px;
+        }
         h1 {
             text-align: center;
             margin-bottom: 30px;
@@ -58,14 +69,27 @@ $games = $data['results'] ?? [];
             color: #9ba3af;
             margin-top: 5px;
         }
+        .back-btn {
+            display: inline-block;
+            margin-top: 25px;
+            background: #00b0ff;
+            padding: 10px 15px;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-btn:hover {
+            background: #0091ea;
+        }
     </style>
 </head>
 <body>
-
-    <h1>🔥 Trending Games</h1>
-
+<div class="navbar">
+    <a href="index.php">NAFI Game Store</a>
+</div>
+        <h1>Trending Games</h1>
     <div class="game-container">
-
         <?php if (count($games) > 0): ?>
             <?php foreach ($games as $game): ?>
                 <div class="game-card">
@@ -78,14 +102,10 @@ $games = $data['results'] ?? [];
                     <div class="released">📅 Release: <?= $game['released'] ?></div>
                 </div>
             <?php endforeach; ?>
-
         <?php else: ?>
-
             <p style="text-align:center;">Gagal memuat data trending dari API.</p>
-
         <?php endif; ?>
-
     </div>
-
+    <a href="index.php" class="back-btn">Back to Home</a>
 </body>
 </html>
