@@ -83,19 +83,14 @@ $game = call_rawg('/games/' . $id);
             background: #0091ea;
         }
     </style>
-
 </head>
 <body>
-
 <!-- NAVBAR -->
 <div class="navbar">
-    <a href="index.php">⮐ NAFI Game Store</a>
+    <a href="index.php">NAFI Game Store</a>
 </div>
-
 <div class="container">
-
     <div class="game-header">
-
         <img src="<?= htmlspecialchars($game['background_image'] ?? '') ?>" 
              alt="<?= htmlspecialchars($game['name']) ?>">
 
@@ -118,14 +113,10 @@ $game = call_rawg('/games/' . $id);
             <p class="meta">🖥 Platform: <?= implode(', ', $platformNames) ?></p>
         </div>
     </div>
-
     <div class="description">
         <?= $game['description'] ?>
     </div>
-
-    <a href="index.php" class="back-btn">⮐ Back to Home</a>
-
+    <a href="index.php" class="back-btn">Back to Home</a>
 </div>
-
 </body>
 </html>
