@@ -244,5 +244,42 @@ $games = $data['results'] ?? [];
         <?php endif; ?>
     </div>
 </div>
+<div 
+        id="load-more" style="text-align:center; padding:20px; display:none;">
+        <p>Loading more games...</p>
+</div>
+<!--fitur load otomatis-->
+        <script>
+let page = 1;
+let isLoading = false;
+
+window.addEventListener('scroll', () => {
+    if (isLoading) return;
+
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 300) {
+        loadMoreGames();
+    }
+});
+
+function loadMoreGames() {
+    isLoading = true;
+    document.getElementById("load-more").style.display = "block";
+
+    page++;
+
+    fetch("load_more.php?page=" + page)
+        .then(res => res.text())
+        .then(html => {
+            if (html.trim() !== "") {
+                document.querySelector(".games").innerHTML += html;
+            }
+            document.getElementById("load-more").style.display = "none";
+            isLoading = false;
+        })
+        .catch(() => {
+            document.getElementById("load-more").innerHTML = "<p>Error loading data...</p>";
+        });
+}
+</script>
 </body>
 </html>
